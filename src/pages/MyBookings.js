@@ -27,7 +27,7 @@ const MyBookings = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await fetch('/api/bookings', {
+        const response = await fetch('http://34.227.78.71/api/bookings', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -54,7 +54,7 @@ const MyBookings = () => {
 
   const cancelBooking = async () => {
     try {
-      const response = await fetch(`/api/bookings/${selectedBookingId}`, {
+      const response = await fetch(`http://34.227.78.71/api/bookings/${selectedBookingId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });

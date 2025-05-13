@@ -20,9 +20,11 @@ const App = () => {
   return (
     <Provider store={store}>
   <Router>
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div className="flex flex-col min-h-screen">
+
       <NavBar />
-      <div className="content" style={{ flex: 1, padding: '20px' }}>
+      <div className="flex-1">
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />

@@ -68,7 +68,7 @@ const RestaurantManager = () => {
   const token = sessionStorage.getItem("JWT");
   const fetchMyRestaurants = async () => {
     try {
-      const response = await fetch("api/restaurants/my", {
+      const response = await fetch("http://34.227.78.71/api/restaurants/my", {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -179,7 +179,7 @@ const RestaurantManager = () => {
       };
 
       try {
-        const response = await fetch(`api/restaurants/${resId}`, {
+        const response = await fetch(`http://34.227.78.71/api/restaurants/${resId}`, {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -263,7 +263,7 @@ const RestaurantManager = () => {
 
       try {
         // Replace with your actual API endpoint for adding a new restaurant
-        const response = await fetch("api/restaurants", {
+        const response = await fetch("http://34.227.78.71/api/restaurants", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,

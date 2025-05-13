@@ -1,5 +1,6 @@
 // client/src/components/Description.js
 import React, { useState, useEffect } from "react";
+import { apiRequest } from "../api"; 
 import {
   Box,
   Container,
@@ -82,7 +83,7 @@ const Description = ({ selectedCardData = {}, handleBack }) => {
     console.log("Sending booking data:", payload);
 
     try {
-      const response = await fetch("/api/bookings", {
+      const response = await apiRequest("http://34.227.78.71/api/bookings",{
         method: "POST",
         headers: {
           "Content-Type": "application/json",

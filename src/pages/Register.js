@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiRequest } from "../api";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -38,7 +39,7 @@ const Register = () => {
     setErrorMsg('');
 
     try {
-      const res = await fetch('/api/auth/register', {
+      const res = await apiRequest('http://34.227.78.71/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

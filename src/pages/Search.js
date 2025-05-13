@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { getSearchUrl } from "../api";  
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -150,15 +151,15 @@ export default function Search() {
 
     try {
       setLoading(true);
-
-      const url = `/api/restaurants/search?${params}`;
-      console.log("➡️  Fetching:", url);
+    
+      const url = getSearchUrl(params);
+      console.log("➡️ Search Fetch URL:", url);
 
       const res = await fetch(url);
       console.log("↩️  Status:", res.status, res.statusText);
 
       if (!res.ok) throw new Error(`API ${res.status}`);
-
+    
       const data = await res.json();
       console.log("✅ Data:", data);
       setResults(data);
