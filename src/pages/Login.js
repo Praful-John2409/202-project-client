@@ -37,7 +37,7 @@ const Login = () => {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/auth/login", {
+      const res = await fetch("http://34.227.78.71/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
