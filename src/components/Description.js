@@ -83,7 +83,7 @@ const Description = ({ selectedCardData = {}, handleBack }) => {
     console.log("Sending booking data:", payload);
 
     try {
-      const response = await apiRequest("https://56ee-147-92-89-45.ngrok-free.app/api/bookings",{
+      const response = await apiRequest("http://34.227.78.71/api/bookings",{
         method: "POST",
         headers: {
           "Content-Type": "application/json",

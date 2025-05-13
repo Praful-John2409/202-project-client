@@ -35,7 +35,7 @@ const ManageAllRestaurants = () => {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const res = await fetch("https://56ee-147-92-89-45.ngrok-free.app/api/restaurants?status=Approved", {
+        const res = await fetch("http://34.227.78.71/api/restaurants?status=Approved", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!res.ok) throw new Error("Failed to fetch restaurants");
@@ -53,7 +53,7 @@ const ManageAllRestaurants = () => {
 
   const confirmDelete = async () => {
     try {
-      const res = await fetch(`https://56ee-147-92-89-45.ngrok-free.app/api/restaurants/${restaurantToDelete._id}`, {
+      const res = await fetch(`http://34.227.78.71/api/restaurants/${restaurantToDelete._id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

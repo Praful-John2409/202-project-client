@@ -39,7 +39,7 @@ const PendingApprovalList = ({ onApprove, onReject, onEdit, onDelete }) => {
     const fetchPendingRestaurants = async () => {
       try {
         const token = sessionStorage.getItem("JWT");
-        const response = await fetch("https://56ee-147-92-89-45.ngrok-free.app/api/restaurants/pending", {
+        const response = await fetch("http://34.227.78.71/api/restaurants/pending", {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -65,7 +65,7 @@ const PendingApprovalList = ({ onApprove, onReject, onEdit, onDelete }) => {
 
   const fetchUpdateRestaurants = async (restaurantId) => {
     try {
-      const response = await fetch(`https://56ee-147-92-89-45.ngrok-free.app/api/restaurants/${restaurantId}/approve`, {
+      const response = await fetch(`http://34.227.78.71/api/restaurants/${restaurantId}/approve`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -86,7 +86,7 @@ const PendingApprovalList = ({ onApprove, onReject, onEdit, onDelete }) => {
     const token = sessionStorage.getItem("JWT");
 
     const response = await fetch(
-      `https://56ee-147-92-89-45.ngrok-free.app/api/restaurants/${restaurantToApprove._id}/approve`,
+      `http://34.227.78.71/api/restaurants/${restaurantToApprove._id}/approve`,
       {
         method: "PUT",
         headers: {
@@ -129,7 +129,7 @@ sessionStorage.setItem("approvedRestaurants", JSON.stringify(updatedApproved));
   try {
     const token = sessionStorage.getItem("JWT");
 
-    const response = await fetch(`https://56ee-147-92-89-45.ngrok-free.app/api/restaurants/${restaurantToReject._id}`, {
+    const response = await fetch(`http://34.227.78.71/api/restaurants/${restaurantToReject._id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`
