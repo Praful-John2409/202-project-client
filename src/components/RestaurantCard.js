@@ -23,7 +23,7 @@ export default function RestaurantCard({ restaurant, onClick }) {
 
   const fetchGooglePlaceDetails = async (placeId) => {
     try {
-      const res = await fetch(`http://34.227.78.71/api/google/reviews?placeId=${placeId}`);
+      const res = await fetch(`https://56ee-147-92-89-45.ngrok-free.app/api/google/reviews?placeId=${placeId}`);
       const data = await res.json();
   
       if (data.status !== "OK") {

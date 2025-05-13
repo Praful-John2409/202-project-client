@@ -151,15 +151,15 @@ export default function Search() {
 
     try {
       setLoading(true);
-    
-      const url = getSearchUrl(params);
-      console.log("➡️ Search Fetch URL:", url);
+
+      const url = `https://56ee-147-92-89-45.ngrok-free.app/api/restaurants/search?${params}`;
+      console.log("➡️  Fetching:", url);
 
       const res = await fetch(url);
       console.log("↩️  Status:", res.status, res.statusText);
 
       if (!res.ok) throw new Error(`API ${res.status}`);
-    
+
       const data = await res.json();
       console.log("✅ Data:", data);
       setResults(data);

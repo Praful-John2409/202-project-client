@@ -39,7 +39,7 @@ const Register = () => {
     setErrorMsg('');
 
     try {
-      const res = await apiRequest('http://34.227.78.71/api/auth/register', {
+      const res = await apiRequest('https://56ee-147-92-89-45.ngrok-free.app/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

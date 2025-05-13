@@ -27,7 +27,7 @@ const MyBookings = () => {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const response = await fetch('http://34.227.78.71/api/bookings', {
+        const response = await fetch('https://56ee-147-92-89-45.ngrok-free.app/api/bookings', {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -54,7 +54,7 @@ const MyBookings = () => {
 
   const cancelBooking = async () => {
     try {
-      const response = await fetch(`http://34.227.78.71/api/bookings/${selectedBookingId}`, {
+      const response = await fetch(`https://56ee-147-92-89-45.ngrok-free.app/api/bookings/${selectedBookingId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
